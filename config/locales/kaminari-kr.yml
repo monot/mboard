@@ -1,0 +1,17 @@
+ko:
+  views:
+    pagination:
+      first: "&laquo; 처음"
+      last: "마지막 &raquo;"
+      previous: "&lsaquo; 이전"
+      next: "다음 &rsaquo;"
+      truncate: "&hellip;"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "%{entry_name}가 없습니다."
+          one: "<b>한 개의</b> %{entry_name}가 표시됩니다."
+          other: "다른 <b>%{count}</b>개의 %{entry_name}가 표시됩니다."
+      more_pages:
+        display_entries: "<b>%{first}&nbsp;-&nbsp;%{last}</b> 전부<b> %{total}</b>개의 %{entry_name}가 표시됩니다."
