@@ -1,6 +1,17 @@
 <% @messages.each do |message| %>
-<h3><%= message.content %></h3>
-<%= link_to "View Message", message_path(message), class: "btn btn-default" %>
+  <div class="col-md-4">
+    <div class="message">
+      <h3 class="message-title"><%= message.content %></h3>
+      <% comment_size = message.comments.size %>
+      <% if comment_size == 0 %>
+        No comment
+      <% else %>
+        <%= comment_size %>개의 코멘트
+      <% end %>
+      <br />
+      <%= link_to "View Message", message_path(message) %>
+    </div>
+  </div>
 <% end %>
 
 <%= link_to "New Message", new_message_path %>
