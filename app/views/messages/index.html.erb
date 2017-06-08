@@ -1,20 +1,26 @@
-<% @messages.each do |message| %>
-  <div class="col-md-4">
-    <div class="message">
-      <h3 class="message-title"><%= message.content %></h3>
-      <% comment_size = message.comments.size %>
-      <% if comment_size == 0 %>
-        No comment
-      <% else %>
-        <%= comment_size %>개의 코멘트
+<!--loop for message card printing-->
+<div class="row">
+  <% @messages.each do |message| %>
+    <div class="col-md-4">
+      <%= link_to(message_path(message)) do %>
+      <div class="message">
+        <div class="message-title"><%= message.content %></div>
+        <div class="message-info">
+          <span class="name">이름름</span>
+          <% comment_size = message.comments.size %>
+          <% if comment_size > 0 %>
+            <span class="cnt">| <%= comment_size %>개의 코멘트</span>
+          <% end %>
+        </div>
+        
+        <br />
+      </div>
       <% end %>
-      <br />
-      <%= link_to "View Message", message_path(message) %>
     </div>
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-12">
+    <%= paginate @messages %>
   </div>
-<% end %>
-
-<%= link_to "New Message", new_message_path %>
-<br />
-<%= paginate @messages %>
-<br />
+</div>
