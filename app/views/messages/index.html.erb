@@ -2,18 +2,19 @@
 <div class="row">
   <% @messages.each do |message| %>
     <div class="col-md-4">
-      <%= link_to(message_path(message)) do %>
+      <%= link_to(message_path(message), class: 'message-wrap') do %>
       <div class="message">
         <div class="message-title"><%= message.content %></div>
         <div class="message-info">
           <span class="name">이름름</span>
+          <span class="detail"> 
+          <!--%= 날짜 출력 해 %-->
           <% comment_size = message.comments.size %>
           <% if comment_size > 0 %>
-            <span class="cnt">| <%= comment_size %>개의 코멘트</span>
+            , <%= comment_size %>개의 코멘트
           <% end %>
+          </span>
         </div>
-        
-        <br />
       </div>
       <% end %>
     </div>
