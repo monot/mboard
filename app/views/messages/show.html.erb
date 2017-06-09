@@ -1,36 +1,60 @@
 <!--show detailed message-->
-<div class="col-md-8 col-md-offset-2">
-  <div class="message-show">
-    <h2><%= @message.content %></h2>
-    <p>
-      Posted by <%= @message.user.name %> <%= time_ago_in_words(@message.created_at) %> ago
-    </p>
-    <% if user_signed_in? %>
-      <% if @message.user_id == current_user.id %>
-        <%= link_to "Edit", edit_message_path(@message) %>
-        <%= link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure?" } %>
-      <% end %>
-    <% end %>
-
-    <h3>Comments:</h3>
-    <% if @message.comments.size != 0 %>
-      <%= render @message.comments %>
-    <% else %>
-      No Comment yet.
-    <% end %>
-
-    <% if user_signed_in? %>
-      <h3>Reply to Message:</h3>
-      <%= render 'comments/form' %>
-    <% else %>
-      <p>
-        Please log in to add comment
-      </p>
-    <% end %>
-
-    <%= link_to "Back", root_path %>
+<div class="hider" hider-show="true"></div>
+<div class="message-show row">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <div class="message-wrap" id="message-box">
+          <div class="content">
+            <%= link_to(root_path, class: 'close') do %>
+              close
+            <% end %>
+            
+            <div class="text"><%= @message.content %></div>
+            
+            <div class="detail row">
+              <div class="col-xs-6 col-md-6">
+                <span class="name"><%= @message.user.name %></span>
+                <span class="time"><%= time_ago_in_words(@message.created_at) %> 전</span>
+              </div>
+              <div class="col-xs-6 col-md-6 text-right">
+                <% if user_signed_in? %>
+                  <% if @message.user_id == current_user.id %>
+                    <%= link_to "EDIT", edit_message_path(@message), class: 'edit' %>
+                    <%= link_to "DELETE", message_path(@message), method: :delete, data: { confirm: "Are you sure?"}, class: 'edit' %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>  
+          <div class="comment">
+            <div class="unit">
+              <% if @message.comments.size == 0 %>  
+                아직 댓글이 없습니다.
+              <% else %>
+                <span class="comment-text">댓글</span>
+                <span class="comment-size"><%= @message.comments.size %></span>
+              <% end %>
+            </div>
+            <% if @message.comments.size != 0 %>
+              <%= render @message.comments %>
+            <% else %>
+              No Comment yet.
+            <% end %>
+            <div class="write">
+              <% if user_signed_in? %>
+                <%= render 'comments/form' %>
+              <% else %>
+                 Please log in to add comment
+              <% end %>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
 <script>
-  document.getElementsByTagName("body")[0].setAttribute("class", "no-scroll"); 
+  $('body').addClass("no-scroll");
 </script>

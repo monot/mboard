@@ -32,11 +32,10 @@ body {
  font-family: 'Noto Sans KR', sans-serif;
  font-weight: 300;
 }
+
 body.no-scroll {
- @media screen and (min-width: $limit-xs) {
-  height: 100%;
-  overflow: hidden;
- }
+ height: 100%;
+ overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -69,6 +68,11 @@ input {
   color: #383838;
   background-color: #fff;
 }
+
+.text-right {
+ text-align: right;
+}
+
 
 /* Header Layout Styles */
 #header {
@@ -166,17 +170,14 @@ input {
    text-decoration: none;
   }
  }
-}
-
- /* Links styles */
-
- .links {
- 	margin-top: 20px;
- 	.btn-default {
- 		color: #0a8fd5;
- 	}
+ &.comment-btn {
+  color: #fff;
+  border: 1px solid #227be4;
+  background-color: #227be4;
+  width: 120px;
+  text-align: center;
  }
-
+}
 
 /* Message styles */
 .message {
@@ -242,60 +243,230 @@ a.message-wrap:hover {
  	clear: left;
  }
 
- /* Message show-page styles */
+/* Message show-page styles */
+.hider[hider-show=true] {
+ display: block;
+ position: fixed;
+ top: 0;
+ left: 0;
+ z-index: 9;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ padding: 0;
+ background-color: #000;
+ opacity: .5;
+}
 
- .message-show {
- 	box-sizing: border-box;
- 	background-color: #a3a3a3;
- 	padding: 2.0em 1.5em;
- 	border-bottom: 4px solid #0a8fd5;
- 	color: #fff;
- 	font-family: 'Noto Sans', sans-serif;
- 	font-weight: 400;
-
- 	h2 {
- 		margin-top: 0;
- 	}
-
- 	.message-desc {
- 		font-size: 1.1em;
- 		line-height: 1.75;
- 		margin-bottom: 50px;
- 	}
-
- 	.message-posted-by {
- 		color: #eee;
- 		font-size: 0.9em;
- 	}
-
- 	.reply-to-msg {
- 		margin-top: 50px;
- 	}
-
+.message-show {
+ display: block;
+ position: fixed;
+ top: 0;
+ left: 0;
+ z-index: 10;
+ width: 100%;
+ height: 100%;
+ min-height: 100%;
+ max-height: 100%;
+ margin: 0;
+ padding: 0;
+ 
+ &.row {
+  height: 100%;
  }
-
-
- /* Comment styles */
+ .container,
+ .container .row,
+ .container .row>div {
+  height: 100%;
+ }
+ 
+ 
+	.message-wrap {
+  @media screen and (max-width: $limit-xs) {
+   margin-top: 0;
+   height: 100%;
+   min-height: 100%;
+   width: 110%;
+   margin-left: -5%;
+  }
+  @media screen and (min-width: $limit-xs) {
+   margin-top: 6%;
+   height: 90%;
+	  min-height: 90%;
+   width: 100%;
+  }
+  
+  overflow: auto;
+  
+	 background-color: #f6f6f6;
+	 
+	 a.close {
+	  display: block;
+	  float: right;
+	  font-size: 20px;
+	  width: 20px;
+	  height: 20px;
+	  @media screen and (max-width: $limit-xs) {
+    margin-right: 0;
+   }
+   @media screen and (min-width: $limit-xs) {
+    margin-right: -20px;
+   }
+	  
+	  
+	  background-image: url('close.png');
+	  background-size: 20px 20px;
+	  background-repeat: no-repeat;
+	  opacity: 1;
+	  font-size: 0;
+	 }
+	 
+ 	.content {
+  	background-image: url('qt-sm.png');
+  	background-color: #fff;
+  	background-position: top left;
+  	background-repeat: no-repeat;
+  	background-size: 40px auto;
+  	background-origin: content-box;
+   @media screen and (max-width: $limit-xs) {
+    padding: 20px;
+   }
+   @media screen and (min-width: $limit-xs) {
+    padding: 40px 60px 40px 60px;
+   }
+   border-bottom: 1px #ddd solid;
+   
+   .text {
+    margin-top: 50px;
+    line-height: 190%;
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+   }
+   .detail {
+    @media screen and (max-width: $limit-xs) {
+     margin-top: 20px;
+    }
+    @media screen and (min-width: $limit-xs) {
+     margin-top: 40px;
+    }
+   }
+ 	}
+	}
 
  .comment {
- 	border-bottom: 1px solid #fff;
- 	padding-top: 15px;
- 	padding-bottom: 15px;
+  @media screen and (max-width: $limit-xs) {
+   padding: 20px;
+  }
+  @media screen and (min-width: $limit-xs) {
+   padding: 40px 60px 40px 60px;
+  }
+  
+  .unit {
+   border-bottom: 1px #ddd solid;
+   padding-bottom: 15px;
+   
+   .comment-text,
+   .comment-size {
+    font-size: 17px;
+    font-weight: 500;
+   }
+   
+   .comment-text {
+    color: #333;
+   }
+   .comment-size {
+    margin-left: 5px;
+    color: #227be4;
+   }
+   
+   .text {
+    margin-top: 25px;
+    font-size: 16px;
+    color: #666;
+    font-weight: 400;
+    line-height: 170%;
+   }
+   
+   .detail {
+    margin-bottom: 10px;
+    margin-top: 15px;
+   }
+  }
+  
+  .write {
+   margin-top: 15px; 
+   padding-bottom: 15px;
+  }
+  
+  textarea {
+   height: 110px;
+   border: 1px solid #ddd;
+   border-radius: 0;
+   box-shadow: 0;
+   font-size: 16px;
+   @media screen and (max-width: $limit-xs) {
+    padding: 10px;
+   }
+   @media screen and (min-width: $limit-xs) {
+    padding: 20px;
+   }
+  }
+  
+  .write-btn {
+   text-align: right;
+   height: 30px;
+  }
+ }
+ 
+ .detail {
+  height: 15px;
+  
+  span,
+  a {
+   display: inline-block;
+   height: 14px;
+   font-size: 14px;
+   line-height: 90%;
+  }
+  .name {
+   color: #666;
+   font-weight: 500;
+   padding: 0;
+   margin: 0;
+  }
+  .time {
+   color: #999;
+   margin: 0 0 0 7px;
+   padding: 0 0 0 7px;
+   border-left: 1px solid #999;
+  }
+  a.edit {
+   color: #227be4;
+   margin: 0 7px 0 0;
+   padding: 0 9px 0 ;
+   border-right: 1px solid #227be4;
+   font-weight: 500;
+  }
+  a.edit:last-of-type {
+   margin: 0;
+   padding: 0;
+   border: 0;
+  }
+ }
+}
 
- 	.comment-content {
- 		font-size: 1.25em;
- 	}
+/* pagination */
+.pgnt {
+ text-align: center;
+}
+ /* Links styles */
 
- 	.comment-posted-by {
- 		color: #eee;
- 		font-size: 0.8em;
- 	}
-
- 	.links {
- 		margin-top: 15px;
- 		a {
- 			color: #0a8fd5;
- 			margin-right: 15px;
- 		}
+ .links {
+ 	margin-top: 20px;
+ 	.btn-default {
+ 		color: #0a8fd5;
  	}
  }
+
+

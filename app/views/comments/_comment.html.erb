@@ -1,11 +1,19 @@
-<p><%= comment.content %></p>
-<p>
-  Posted by <%= comment.user.name %> <%= time_ago_in_words(comment.created_at) %> ago
-</p>
-
-<% if user_signed_in? %>
-  <% if comment.user_id == current_user.id %>
-    <%= link_to "Edit", edit_message_comment_path(comment.message, comment) %>
-    <%= link_to "Delete", message_comment_path(comment.message, comment), method: :delete, data: { confirm: "Are you sure?" } %>
-  <% end %>
-<% end %>
+<div class="unit">
+  <div class="text">
+    <%= comment.content %>
+  </div>
+  <div class="detail row">
+    <div class="col-xs-6 col-md-6">
+      <span class="name"><%= comment.user.name %></span>
+      <span class="time"><%= time_ago_in_words(comment.created_at) %> 전</span>
+    </div>
+    <div class="col-xs-6 col-md-6 text-right">
+      <% if user_signed_in? %>
+        <% if comment.user_id == current_user.id %>
+          <%= link_to "EDIT", edit_message_comment_path(comment.message, comment), class: 'edit' %>
+          <%= link_to "DELETE", message_comment_path(comment.message, comment), method: :delete, data: { confirm: "Are you sure?"}, class: 'edit' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
