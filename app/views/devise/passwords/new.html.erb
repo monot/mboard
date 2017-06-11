@@ -1,21 +1,17 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <h2>Forgot your password?</h2>
+    <h2>비밀번호 재설정</h2>
     <hr />
+    아래의 입력하신 이메일로 비밀번호 재설정 방법을 보내드립니다.<br /><br />
     <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true %>
+        <%= f.input :email, label: "이메일", required: true, autofocus: true %>
       </div>
 
-<<<<<<< HEAD
       <div class="form-actions write-btn">
-        <%= f.button :submit, "Send me reset password instructions", class: "round-btn confirm-btn" %>
-=======
-      <div class="form-actions">
-        <%= f.button :submit, "Send me reset password instructions" %>
->>>>>>> 58168c627698e847a8f87188b3cefe898caf2dcd
+        <%= f.button :submit, "비밀번호 재설정", class: "round-btn confirm-btn" %>
       </div>
     <% end %>
   </div>

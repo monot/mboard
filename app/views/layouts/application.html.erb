@@ -51,21 +51,21 @@
         </p>
       </div>
     </div>
-  
+
     <div class="toastArea">
       <% if notice != nil and notice != "" %>
         <div class="toast t-notice">
           <%= notice %>
         </div>
       <% end %>
-      
+
       <% if alert != nil and alert != "" %>
         <div class="toast t-alert">
           <%= alert %>
         </div>
       <% end %>
     </div>
-    
+
     <script>
       $(".toast").each(function(i) {
         $(this).delay(1000*i).slideDown(500);
@@ -76,22 +76,15 @@
     <div class="container">
       <%= yield %>
     </div>
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 58168c627698e847a8f87188b3cefe898caf2dcd
     <footer class="bd-footer text-muted text-center">
       <div class="container">
         <hr />
-        강남준 선생님을 사랑하는 사람들
+        강남준 선생님께 보내는 메시지&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;서울대학교 언론정보학과
         <br />
         <br />
       </div>
     </footer>
-<<<<<<< HEAD
-=======
 
->>>>>>> 58168c627698e847a8f87188b3cefe898caf2dcd
   </body>
 </html>

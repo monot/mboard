@@ -49,6 +49,10 @@ input {
  font-weight: 300;
 }
 
+.no_underline {
+  text-decoration: none;
+}
+
 .btn-custom {
  	background-color: #fff;
  	color: #0a8fd5;
@@ -157,14 +161,14 @@ input {
 /* footer */
 footer {
  margin: 50px 0 0 0;
- 
+
  @media screen and (max-width: $limit-xs) {
   padding: 15px 0 15px 0;
  }
  @media screen and (min-width: $limit-xs) {
   padding: 20px 0 20px 0;
  }
- 
+
  text-align: center;
 }
 
@@ -177,7 +181,7 @@ footer {
   display: flex;
   justify-content: flex-end;
   button, a {
-   vertical-align: top; 
+   vertical-align: top;
   }
   &.support-set {
    margin-top: 50px;
@@ -198,17 +202,17 @@ footer {
  padding: 12px 30px 12px 30px;
  border-radius: 20px;
  font-weight: 400;
- 
+
  margin: 0 0 0 15px;
- 
+
  a:hover {
   text-decoration: none;
  }
- 
+
  &:first-child {
   margin: 0;
  }
- 
+
  &.title-btn {
   color: #fff;
   border: 1px solid #fff;
@@ -227,14 +231,14 @@ footer {
   min-width: 120px;
   text-align: center;
  }
- 
+
  &.back-btn {
   border: 1px solid #999;
   color: #666;
   min-width: 120px;
   text-align: center;
  }
- 
+
  &.support-btn {
   border: 1px solid #999;
   color: #666;
@@ -242,7 +246,7 @@ footer {
   text-align: center;
   background-color: #f7f7f7;
  }
- 
+
 }
 
 /* Message styles */
@@ -603,7 +607,7 @@ a.message-wrap:hover {
  		color: #0a8fd5;
  	}
  }
- 
+
 /* toast */
 
 .toastArea {
@@ -619,7 +623,7 @@ a.message-wrap:hover {
   left: 50%;
   margin-left: -300px;
  }
- 
+
 }
 .toast {
  position: relative;
