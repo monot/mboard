@@ -470,11 +470,11 @@ a.message-wrap:hover {
  justify-content: center;
  margin: 0 0 25px 0;
  padding: 0;
- 
+
  pages {
   display: flex;
  }
- 
+
  li {
   list-style: none;
   display: block;
@@ -485,29 +485,29 @@ a.message-wrap:hover {
   margin-right: -1px;
   transition: .3s;
  }
- 
+
  li a {
   color: #227be4;
   display: block;
   padding: 8px 11px 8px 11px;
   transition: .3s;
  }
- 
+
  li a:hover {
   background-color: #227be4;
   color: #fff;
   font-weight: 400;
   text-decoration: none;
  }
- 
+
  li.pg:first-of-type {
   border-radius: 5px 0 0 5px;
  }
- 
+
  li.pg:last-of-type {
   border-radius: 0 5px 5px 0;
  }
- 
+
  li.pg.active {
   background-color: #e7e7e7;
   a {
@@ -515,17 +515,17 @@ a.message-wrap:hover {
    font-weight: 500;
   }
  }
- 
+
  li.first {
   margin-right: 10px;
   border-radius: 5px;
  }
- 
+
  li.last {
   margin-left: 10px;
   border-radius: 5px;
  }
- 
+
 }
 
 
