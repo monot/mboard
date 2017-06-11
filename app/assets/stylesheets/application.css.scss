@@ -17,11 +17,11 @@
 @import url(https://fonts.googleapis.com/earlyaccess/kopubbatang.css);
 @import "bootstrap-sprockets";
 @import "bootstrap";
- 
+
 /* variables */
 $limit-xs: 768px;
 $limit-sm: 992px;
-$limit-md: 1200px; 
+$limit-md: 1200px;
 $visual-background: #426fd3;
 $light-gray: #f9f9f9;
 
@@ -80,12 +80,12 @@ input {
  background-color: $visual-background;
  background-repeat: no-repeat;
  @media screen and (max-width: $limit-xs) {
-  background-image: url('bg-xs.png');
+  background-image: asset_url('bg-xs.png');
   height: 600px;
   background-size: auto 100%;
  }
  @media screen and (min-width: $limit-xs) {
-  background-image: url('bg.png');
+  background-image: asset_url('bg.png');
   height: 500px;
   background-size: 170% auto;
  }
@@ -186,7 +186,7 @@ input {
 	padding: 30px;
 	border: 2px #eee solid;
 	transition: .3s;
-	
+
 	background-color: transparent;
 	background-image: url('qt-sm.png');
 	background-position: top left;
@@ -197,7 +197,7 @@ input {
 	&:hover {
 	 background-color: $light-gray;
 	}
-	
+
 	.message-title {
 	 margin-top: 45px;
 		margin-bottom: 25px;
@@ -231,7 +231,7 @@ input {
    padding: 0 0 0 7px;
    border-left: 1px solid #999;
   }
- }	
+ }
 }
 
 a.message-wrap:hover {
@@ -270,7 +270,7 @@ a.message-wrap:hover {
  max-height: 100%;
  margin: 0;
  padding: 0;
- 
+
  &.row {
   height: 100%;
  }
@@ -279,8 +279,8 @@ a.message-wrap:hover {
  .container .row>div {
   height: 100%;
  }
- 
- 
+
+
 	.message-wrap {
   @media screen and (max-width: $limit-xs) {
    margin-top: 0;
@@ -295,11 +295,11 @@ a.message-wrap:hover {
 	  min-height: 90%;
    width: 100%;
   }
-  
+
   overflow: auto;
-  
+
 	 background-color: #f6f6f6;
-	 
+
 	 a.close {
 	  display: block;
 	  float: right;
@@ -312,15 +312,15 @@ a.message-wrap:hover {
    @media screen and (min-width: $limit-xs) {
     margin-right: -20px;
    }
-	  
-	  
+
+
 	  background-image: url('close.png');
 	  background-size: 20px 20px;
 	  background-repeat: no-repeat;
 	  opacity: 1;
 	  font-size: 0;
 	 }
-	 
+
  	.content {
   	background-image: url('qt-sm.png');
   	background-color: #fff;
@@ -335,7 +335,7 @@ a.message-wrap:hover {
     padding: 40px 60px 40px 60px;
    }
    border-bottom: 1px #ddd solid;
-   
+
    .text {
     margin-top: 50px;
     line-height: 190%;
@@ -361,17 +361,17 @@ a.message-wrap:hover {
   @media screen and (min-width: $limit-xs) {
    padding: 40px 60px 40px 60px;
   }
-  
+
   .unit {
    border-bottom: 1px #ddd solid;
    padding-bottom: 15px;
-   
+
    .comment-text,
    .comment-size {
     font-size: 17px;
     font-weight: 500;
    }
-   
+
    .comment-text {
     color: #333;
    }
@@ -379,7 +379,7 @@ a.message-wrap:hover {
     margin-left: 5px;
     color: #227be4;
    }
-   
+
    .text {
     margin-top: 25px;
     font-size: 16px;
@@ -387,18 +387,18 @@ a.message-wrap:hover {
     font-weight: 400;
     line-height: 170%;
    }
-   
+
    .detail {
     margin-bottom: 10px;
     margin-top: 15px;
    }
   }
-  
+
   .write {
-   margin-top: 15px; 
+   margin-top: 15px;
    padding-bottom: 15px;
   }
-  
+
   textarea {
    height: 110px;
    border: 1px solid #ddd;
@@ -412,16 +412,16 @@ a.message-wrap:hover {
     padding: 20px;
    }
   }
-  
+
   .write-btn {
    text-align: right;
    height: 30px;
   }
  }
- 
+
  .detail {
   height: 15px;
-  
+
   span,
   a {
    display: inline-block;
@@ -468,5 +468,3 @@ a.message-wrap:hover {
  		color: #0a8fd5;
  	}
  }
-
-
