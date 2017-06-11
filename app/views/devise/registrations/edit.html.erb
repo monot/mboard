@@ -1,30 +1,44 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<!--registration-->
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h2><%= resource_name.to_s.humanize %> 수정</h2>
+    <hr />
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :name, required: true %>
-    <%= f.input :old_affiliation, required: true %>
-    <%= f.input :affiliation, required: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <div class="form-inputs">
+        <%= f.input :email, label: "이메일", required: true, autofocus: true %>
+        <%= f.input :name, label: "이름", required: true %>
+        <%= f.input :old_affiliation, label: "과거 소속", placeholder: "예) 서울대 언론정보학과 95학번 등"%>
+        <%= f.input :affiliation, label: "현재 소속"  %>
+        
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>이메일 <%= resource.unconfirmed_email %> 확인을 기다리고 있습니다.</p>
+        <% end %>
+      
+        <%= f.input :password, label: "비밀번호", required: false, hint: ("최소 #{@minimum_password_length}자 이상" if @minimum_password_length) %>
+        <%= f.input :password_confirmation, label: "비밀번호 확인", required: false %>
+        <%= f.input :current_password, hint: "정보 변경을 위해 현재 비밀번호를 입력해주세요.", required: true %>  
+      </div>
+      
+      
+        
+      <div class="form-actions write-btn">
+        <%= f.button :submit, "수정", class: "round-btn confirm-btn" %>
+      </div>
     <% end %>
-
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    
+    <hr />
+    
+    <h3>계정 삭제하기</h3>
+    계정을 삭제하시겠습니까?  
+    <div class="write-btn action-set">
+      <%= link_to "네, 삭제하겠습니다.", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"round-btn support-btn" %></p>  
+    </div>
+    <div class="write-btn support-set">
+      <%= link_to "뒤로가기", :back, class: "round-btn back-btn" %>  
+    </div>
+    
+    <!-- <%= render "devise/shared/links" %> -->
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
