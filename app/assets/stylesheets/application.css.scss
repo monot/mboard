@@ -80,12 +80,12 @@ input {
  background-color: $visual-background;
  background-repeat: no-repeat;
  @media screen and (max-width: $limit-xs) {
-  background-image: asset_url('bg-xs.png');
+  background-image: url(asset_path('bg-xs.png'));
   height: 600px;
   background-size: auto 100%;
  }
  @media screen and (min-width: $limit-xs) {
-  background-image: asset_url('bg.png');
+  background-image: url(asset_path('bg.png'));
   height: 500px;
   background-size: 170% auto;
  }
