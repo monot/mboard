@@ -52,7 +52,29 @@
       </div>
     </div>
     <% else %>
-    
+    <div id="header" class="header-narrow">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-6 narrow-title">
+            강남준 선생님께 보내는 메시지
+          </div>
+          <div class="col-xs-12 col-md-6 nav-glb">
+            <% if user_signed_in? %>
+              <div><%= link_to "새 메시지 작성", new_message_path, class: "round-btn title-btn" %></div>
+            <% end %>
+            <hr />
+            <div><%= link_to "홈", root_path %></div>
+            <div><%= link_to "프레젠테이션 모드", "#" %></div>
+            <% if user_signed_in? %>
+            <div><%= link_to "로그아웃", destroy_user_session_path, method: :delete  %></div>
+            <% else %>
+            <div><%= link_to "가입", new_user_registration_path %></div>
+            <div><%= link_to "로그인", new_user_session_path %></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
     <% end %>
 
     <div class="toastArea">

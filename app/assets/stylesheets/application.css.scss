@@ -107,6 +107,68 @@ input {
   height: 500px;
   background-size: auto 500px;
  }
+ 
+ &.header-narrow {
+  background-position: center center;
+  background-color: $visual-background;
+  background-repeat: no-repeat;
+  
+  @media screen and (max-width: $limit-xs) {
+   background-image: url(asset_path('bg-narrow-xs.png'));
+   height: 220px;
+   background-size: auto 220px;
+  
+   .narrow-title {
+    font-size: 24px;
+    font-family: 'KoPub Batang', Serif;
+    color: #fff;
+    text-align: left;
+    font-weight: 400;
+    margin-top: 15px;
+    line-height: 100%;
+   }
+   
+   .nav-glb {
+    margin-left: -10px;
+    margin-top: 50px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    div {
+     padding: 13px 15px 13px 15px;
+    }
+   }
+   
+   hr {
+    width: 100%;
+    height: 1px;
+    border: 0;
+    margin: 0;
+   }
+  }
+  
+  @media screen and (min-width: $limit-xs) {
+   background-image: url(asset_path('bg-narrow.png'));
+   background-size: auto 140px;
+   height: 140px;
+   
+   .narrow-title {
+    font-size: 36px;
+    font-family: 'KoPub Batang', Serif;
+    color: #fff;
+    text-align: left;
+    font-weight: 400;
+    margin-top: 52px;
+    line-height: 100%;
+   }
+   
+   .round-btn {
+    margin-top: -16px;
+   }
+   hr {
+    display: none;
+   }
+  }
+ }
 }
 
 .nav-glb {
