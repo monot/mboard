@@ -58,6 +58,10 @@ class MessagesController < ApplicationController
 
   end
 
+  def presentation
+
+  end
+
 
   private
     def message_params
