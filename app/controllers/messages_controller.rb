@@ -48,6 +48,16 @@ class MessagesController < ApplicationController
     redirect_to root_path
   end
 
+  def sample
+    message = Message.all.sample
+    data = {}
+    data['message'] = message.content
+    data['author'] = message.user.name
+    data['href'] = "/message/" + message.id.to_s
+    render json: data
+
+  end
+
 
   private
     def message_params
