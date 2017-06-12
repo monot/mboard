@@ -1,12 +1,6 @@
 var timing_rate = 70;
 var timing_delay = 2000;
 
-var get_rand_id = function (min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-}
-
 var get_new = function() {
     $.getJSON("sample").done(
         function(data) {
@@ -44,7 +38,7 @@ var show_message = function(msg, author, href) {
     })
     
     var timing = timing_rate * msg.length + timing_delay;
-    console.log(timing);
+    //console.log(timing);
     setTimeout(hide, timing);
 }
 

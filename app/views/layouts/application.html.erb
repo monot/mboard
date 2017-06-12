@@ -17,7 +17,7 @@
         <div class="row">
           <div class="col-xs-12 col-md-12 nav-glb">
             <div><%= link_to "홈", root_path %></div>
-            <div><%= link_to "프레젠테이션 모드", "#" %></div>
+            <div><%= link_to "프레젠테이션 모드", messages_presentation_path %></div>
             <% if user_signed_in? %>
             <div><%= link_to "로그아웃", destroy_user_session_path, method: :delete  %></div>
             <% else %>
@@ -66,7 +66,7 @@
             <% end %>
             <hr />
             <div><%= link_to "홈", root_path %></div>
-            <div><%= link_to "프레젠테이션 모드", "#" %></div>
+            <div><%= link_to "프레젠테이션 모드", messages_presentation_path %></div>
             <% if user_signed_in? %>
             <div><%= link_to "로그아웃", destroy_user_session_path, method: :delete  %></div>
             <% else %>
