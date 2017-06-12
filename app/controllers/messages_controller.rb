@@ -53,7 +53,7 @@ class MessagesController < ApplicationController
     data = {}
     data['message'] = message.content
     data['author'] = message.user.name
-    data['href'] = "/message/" + message.id.to_s
+    data['href'] = "/messages/" + message.id.to_s
     render json: data
 
   end
