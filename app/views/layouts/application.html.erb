@@ -11,7 +11,7 @@
   </head>
 
   <body>
-
+    <% if params[:action] == 'index' %>
     <div id="header" class="header">
       <div class="container">
         <div class="row">
@@ -51,6 +51,9 @@
         </p>
       </div>
     </div>
+    <% else %>
+    
+    <% end %>
 
     <div class="toastArea">
       <% if notice != nil and notice != "" %>
