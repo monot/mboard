@@ -1,15 +1,11 @@
 <!--show detailed message-->
-<div class="hider" hider-show="true"></div>
 <div class="message-show row">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-8 col-md-offset-2">
         <div class="message-wrap" id="message-box">
           <div class="content">
-            <%= link_to(root_path, class: 'close') do %>
-              close
-            <% end %>
-
+            
             <div class="text"><%= simple_format(@message.content) %></div>
 
             <div class="detail row">
@@ -48,11 +44,11 @@
             </div>
           </div>
         </div>
+        <div class="write-btn action-set">
+          <!--eunjs-->
+          <a href="#" class="round-btn support-btn back-btn">목록으로</a>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<script>
-  $('body').addClass("no-scroll");
-</script>
