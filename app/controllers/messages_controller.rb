@@ -8,6 +8,15 @@ class MessagesController < ApplicationController
   end
 
   def show
+    messages = Message.all.reverse
+    id = params[:id]
+    @page = 2
+    messages.each_with_index do |m, i|
+      if m.id == id.to_i
+        @page = (i/9) + 1 
+      end
+    end
+
   end
 
   def new
