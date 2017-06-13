@@ -5,13 +5,13 @@ var get_new = function() {
     $.getJSON("sample").done(
         function(data) {
             var msg_temp = data.message;
-            if (data.message.length > 110) {
-                msg_temp = data.message.substring(0, 100) + "...";
+            if (data.message.length > 140) {
+                msg_temp = data.message.substring(0, 130) + "...";
             }
             show_message(msg_temp, data.author, data.href);
         }
     );
-    
+
 }
 
 var show_message = function(msg, author, href) {
@@ -19,9 +19,9 @@ var show_message = function(msg, author, href) {
         $("<div>").attr("id", "pt-message").text(msg),
         $("<div>").attr("id", "pt-name").text("― " + author + " ―")
     );
-    
+
     $("#pt-togo").attr('href', href);
-    
+
     $("#pt-message").textillate({
         initialDelay: 0,
         autoStart: true,
@@ -36,7 +36,7 @@ var show_message = function(msg, author, href) {
             delay: 50
         }
     })
-    
+
     var timing = timing_rate * msg.length + timing_delay;
     //console.log(timing);
     setTimeout(hide, timing);
