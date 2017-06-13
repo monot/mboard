@@ -11,12 +11,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to message_path(@message)
     else
-      render 'new'
+      redirect_to message_path(@message)
     end
-  end
-
-  def new
-    redirect_to message_path(@message)
   end
 
   def edit
