@@ -17,7 +17,7 @@ var get_new = function() {
 var show_message = function(msg, author, href) {
     $("#pt-wrap").append(
         $("<div>").attr("id", "pt-message").text(msg),
-        $("<div>").attr("id", "pt-name").text(author)
+        $("<div>").attr("id", "pt-name").text("― " + author + " ―")
     );
     
     $("#pt-togo").attr('href', href);

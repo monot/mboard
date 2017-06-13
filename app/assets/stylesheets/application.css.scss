@@ -706,14 +706,15 @@ a.list-message-wrap:hover {
  z-index: 10;
  
  @media screen and (max-width: $limit-xs) {
-  margin: 5% 15% 50px 15%;
+  margin: 5% 15% 90px 15%;
+  font-size: 16px;
  }
  @media screen and (min-width: $limit-xs) {
-  margin: 5% 15% 3% 15%;
+  margin: 5% 15% 9% 15%;
+  font-size: 26px;
  }
 
  text-align: center; 
- font-size: 16px;
 }
 
 #pt-name a {
