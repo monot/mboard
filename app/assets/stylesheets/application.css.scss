@@ -684,10 +684,10 @@ a.list-message-wrap:hover {
  z-index: 9;
 
  @media screen and (max-width: $limit-xs) {
-  width: 86%;
+  width: 90%;
   height: 80%;
-  margin: 70px 7% 0 7%;
-  font-size: 32px;
+  margin: 60px 5% 0 5%;
+  font-size: 30px;
   line-height: 140%;
  }
  @media screen and (min-width: $limit-xs) {
