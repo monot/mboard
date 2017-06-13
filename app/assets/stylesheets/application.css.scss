@@ -351,7 +351,7 @@ footer {
  	transition: .3s;
 
  	background-color: transparent;
- 	background-image: url('qt-sm.png');
+ 	background-image: url(asset_path('qt-sm.png'));
  	background-position: top left;
  	background-repeat: no-repeat;
  	background-size: 40px auto;
@@ -412,7 +412,7 @@ a.list-message-wrap:hover {
  .message-wrap {
 
  	.content {
-  	background-image: url('qt-sm.png');
+  	background-image: url(asset_path('qt-sm.png'));
   	background-color: #fff;
   	background-position: top left;
   	background-repeat: no-repeat;
@@ -687,7 +687,7 @@ a.list-message-wrap:hover {
   width: 86%;
   height: 80%;
   margin: 70px 7% 0 7%;
-  font-size: 36px;
+  font-size: 32px;
   line-height: 140%;
  }
  @media screen and (min-width: $limit-xs) {
@@ -710,7 +710,7 @@ a.list-message-wrap:hover {
  z-index: 10;
 
  @media screen and (max-width: $limit-xs) {
-  margin: 5% 15% 90px 15%;
+  margin: 5% 15% 65px 15%;
   font-size: 16px;
  }
  @media screen and (min-width: $limit-xs) {
@@ -719,7 +719,6 @@ a.list-message-wrap:hover {
  }
 
  text-align: center;
- font-size: 16px;
 }
 
 #pt-name a {
