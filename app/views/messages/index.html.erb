@@ -4,7 +4,7 @@
     <div class="col-md-4">
       <%= link_to(message_path(message), class: 'list-message-wrap') do %>
       <div class="message">
-        <div class="message-title"><%= truncate(message.content, :length => 50) %></div>
+        <div class="message-title"><%= truncate(message.content, :length => 54) %></div>
         <div class="message-info">
           <span class="name"><%= message.user.name %></span>
           <span class="detail">
