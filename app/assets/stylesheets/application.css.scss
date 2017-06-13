@@ -53,8 +53,12 @@ input {
  font-weight: 300;
 }
 
-.no_underline {
+.no_underline:hover {
   text-decoration: none;
+}
+
+.title_white, .title_white:hover{
+  color: white;
 }
 
 .btn-custom {
@@ -107,17 +111,17 @@ input {
   height: 500px;
   background-size: auto 500px;
  }
- 
+
  &.header-narrow {
   background-position: center center;
   background-color: $visual-background;
   background-repeat: no-repeat;
-  
+
   @media screen and (max-width: $limit-xs) {
    background-image: url(asset_path('bg-narrow-xs.png'));
    height: 180px;
    background-size: auto 180px;
-  
+
    .narrow-title {
     font-size: 24px;
     font-family: 'KoPub Batang', Serif;
@@ -127,10 +131,10 @@ input {
     margin-top: 80px;
     line-height: 100%;
     height: 24px;
-    overflow: hidden; 
+    overflow: hidden;
     white-space: nowrap;
    }
-   
+
    .nav-glb {
     margin-top: 5px;
     justify-content: flex-end;
@@ -139,7 +143,7 @@ input {
      padding: 13px 15px 13px 15px;
     }
    }
-   
+
    hr {
     width: 100%;
     height: 1px;
@@ -147,12 +151,12 @@ input {
     margin: 0;
    }
   }
-  
+
   @media screen and (min-width: $limit-xs) {
    background-image: url(asset_path('bg-narrow.png'));
    background-size: auto 140px;
    height: 140px;
-   
+
    .narrow-title {
     font-size: 36px;
     font-family: 'KoPub Batang', Serif;
@@ -162,10 +166,10 @@ input {
     margin-top: 52px;
     line-height: 100%;
     height: 36px;
-    overflow: hidden; 
+    overflow: hidden;
     white-space: nowrap;
    }
-   
+
    .round-btn {
     margin-top: -16px;
    }
@@ -281,7 +285,7 @@ footer {
  a:hover {
   text-decoration: none;
  }
- 
+
 
  &:first-child {
   margin: 0;
@@ -319,12 +323,12 @@ footer {
   min-width: 120px;
   text-align: center;
   background-color: #f7f7f7;
-  
+
   &:hover {
    background-color: #f3f3f3;
   }
  }
- 
+
  &.back-btn {
   background-image: url(asset_path('arrow_back.png'));
   background-position: 20px center;
@@ -345,18 +349,18 @@ footer {
  	padding: 30px;
  	border: 2px #eee solid;
  	transition: .3s;
- 
+
  	background-color: transparent;
  	background-image: url('qt-sm.png');
  	background-position: top left;
  	background-repeat: no-repeat;
  	background-size: 40px auto;
  	background-origin: content-box;
- 
+
  	&:hover {
  	 background-color: $light-gray;
  	}
- 
+
  	.message-title {
  	 margin-top: 45px;
  		margin-bottom: 25px;
@@ -368,7 +372,7 @@ footer {
  		overflow: hidden;
  		text-overflow: ellipsis;
  	}
- 
+
   .message-info {
    border-top: 1px #eee solid;
    padding-top: 15px;
@@ -392,7 +396,7 @@ footer {
    }
   }
  }
- 
+
  .message:nth-child(4n) {
   	clear: left;
  }
@@ -406,7 +410,7 @@ a.list-message-wrap:hover {
 /* Message show-page styles */
 .message-show {
  .message-wrap {
- 
+
  	.content {
   	background-image: url('qt-sm.png');
   	background-color: #fff;
@@ -442,7 +446,7 @@ a.list-message-wrap:hover {
 
  .comment {
   background-color: #f7f7f7;
-  
+
   @media screen and (max-width: $limit-xs) {
    padding: 20px;
   }
@@ -704,7 +708,7 @@ a.list-message-wrap:hover {
  left: 0;
  width: 70%;
  z-index: 10;
- 
+
  @media screen and (max-width: $limit-xs) {
   margin: 5% 15% 50px 15%;
  }
@@ -712,7 +716,7 @@ a.list-message-wrap:hover {
   margin: 5% 15% 3% 15%;
  }
 
- text-align: center; 
+ text-align: center;
  font-size: 16px;
 }
 
