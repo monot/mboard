@@ -1,6 +1,7 @@
 <%= simple_form_for @message do |f| %>
   <%= f.input :content, label: false, :input_html => {:rows => 10} %>
   <div class="write-btn">
+    <%= link_to "취소", :back, class: "round-btn support-btn back-btn" %>
     <%= f.button :submit, class: "round-btn confirm-btn" %>
   </div>
 <% end %>

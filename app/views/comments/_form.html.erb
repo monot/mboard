@@ -1,6 +1,9 @@
 <%= simple_form_for([@message, @message.comments.build]) do |f| %>
   <%= f.input :content, :label => "답글", placeholder: "답글을 입력해주세요" %>
+
   <div class="write-btn">
-    <%= f.button :submit, value: '확인', class: 'round-btn comment-btn' %>
+    <a href="/messages?page=<%=@page%>" class="round-btn support-btn back-btn">목록으로</a>
+    <%= f.button :submit, value: '등록', class: 'round-btn comment-btn' %>
   </div>
+
 <% end %>
