@@ -351,7 +351,7 @@ footer {
  	transition: .3s;
 
  	background-color: transparent;
- 	background-image: url('qt-sm.png');
+ 	background-image: url(asset_path('qt-sm.png'));
  	background-position: top left;
  	background-repeat: no-repeat;
  	background-size: 40px auto;
@@ -412,7 +412,7 @@ a.list-message-wrap:hover {
  .message-wrap {
 
  	.content {
-  	background-image: url('qt-sm.png');
+  	background-image: url(asset_path('qt-sm.png'));
   	background-color: #fff;
   	background-position: top left;
   	background-repeat: no-repeat;
