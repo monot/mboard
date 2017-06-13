@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @comment = current_user.messages.build.comments.build
+    #@comment = current_user.messages.build.comments.build
     messages = Message.all.reverse
     id = params[:id]
     @page = 2

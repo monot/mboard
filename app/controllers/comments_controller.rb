@@ -11,7 +11,8 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to message_path(@message)
     else
-      redirect_to message_path(@message)
+      #redirect_to message_path(@message)
+      redirect_to "/messages/#{@message.id}?comment_null=true"
     end
   end
 
