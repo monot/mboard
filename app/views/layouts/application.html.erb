@@ -15,7 +15,7 @@
     <div id="header" class="header">
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-md-12 nav-glb">
+          <div class="col-xs-12 col-sm-12 nav-glb">
             <div><%= link_to "홈", root_path %></div>
             <div><%= link_to "프레젠테이션 모드", messages_presentation_path %></div>
             <% if user_signed_in? %>
@@ -29,7 +29,7 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-xs-12 col-md-12 site-title">
+            <div class="col-xs-12 col-sm-12 site-title">
               강남준 선생님께<br />
               드리는 메시지
             </div>
@@ -39,7 +39,7 @@
         <% if user_signed_in? %>
         <div class="container">
           <div class="row">
-            <div class="col-xs-12 col-md-12 msg-compose">
+            <div class="col-xs-12 col-sm-12 msg-compose">
               <%= link_to "새 메시지 작성", new_message_path, class: "round-btn title-btn"%>
             </div>
           </div>
@@ -57,10 +57,7 @@
     <div id="header" class="header-narrow">
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-md-6 narrow-title">
-            강남준 선생님께 드리는 메시지
-          </div>
-          <div class="col-xs-12 col-md-6 nav-glb">
+          <div class="col-xs-12 col-sm-4 col-sm-push-8 col-md-6 col-md-push-6 nav-glb">
 
             <div><%= link_to "홈", root_path %></div>
             <% if user_signed_in? %>
@@ -69,6 +66,9 @@
             <div><%= link_to "가입", new_user_registration_path %></div>
             <div><%= link_to "로그인", new_user_session_path %></div>
             <% end %>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-sm-pull-4 col-md-6 col-md-pull-6 narrow-title">
+            강남준 선생님께 드리는 메시지
           </div>
         </div>
       </div>
