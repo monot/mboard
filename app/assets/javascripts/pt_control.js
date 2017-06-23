@@ -5,8 +5,8 @@ var get_new = function() {
     $.getJSON("sample").done(
         function(data) {
             var msg_temp = data.message;
-            if (data.message.length > 140) {
-                msg_temp = data.message.substring(0, 130) + "...";
+            if (data.message.length > 160) {
+                msg_temp = data.message.substring(0, 150) + "...";
             }
             show_message(msg_temp, data.author, data.href);
         }
